@@ -17,15 +17,15 @@
 
     <div class="side">...</div>
   <div class="main">  <div class="gallery">
-  <a target="_blank" href="img_.jpg">
-    <img src="img_.jpg" alt="Cinque Terre" width="600" height="400">
+  <a target="_blank" href="maxresdefault.jpg">
+    <img src="/" alt="Keyboard 1" width="600" height="400">
   </a>
   <div class="desc">Add a description of the image here</div>
 </div>
 
 <div class="gallery">
   <a target="_blank" href="img.jpg">
-    <img src="img_" alt="" width="600" height="400">
+    <img src="/images/mechanical-keyboard-with-rbg.jpg" alt="keyboard 2" width="600" height="400">
   </a>
   <div class="desc">Add a description of the image here</div>
 </div>
