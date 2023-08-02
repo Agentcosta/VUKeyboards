@@ -17,7 +17,7 @@
 
     <div class="side">...</div>
   <div class="main">  <div class="gallery">
-  <a target="_blank" href="maxresdefault.jpg">
+  <a target="_blank" href="/images/maxresdefault.jpg">
     <img src="/" alt="Keyboard 1" width="600" height="400">
   </a>
   <div class="desc">Add a description of the image here</div>
