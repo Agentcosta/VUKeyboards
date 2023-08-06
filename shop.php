@@ -1,23 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Page Title</title>
+<title>vukeyboards-shop</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<style>
-    div.scroll-container {
-  background-color: #333;
-  overflow: auto;
-  white-space: nowrap;
-  padding: 10px;
+    <style>
+        div.gallery {
+  border: 1px solid #ccc;
 }
 
-div.scroll-container img {
-  padding: 10px;
+div.gallery:hover {
+  border: 1px solid #777;
 }
 
-</style>
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+    color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}</style>
 </head>
 <body>
 
@@ -25,45 +60,55 @@ div.scroll-container img {
 
 <div class="row">
 
-    <div class="side">...</div>
   <div class="main"> 
-      <div class="scroll-container">
+      <div class="responsive">
       <div class="gallery">
-  <a target="_blank" href="/images/maxresdefault.jpg">
-    <img src="/" alt="Keyboard 1" width="600" height="400">
+  <a target="_blank" href="images/barboneblue.jpg">
+    <img src="images/barboneblue.jpg" alt="Keyboard 1" width="600" height="400">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="desc">Barbone Blue</div>
 </div>
       </div>
       
+      
      
-<div class="scroll-container">
+<div class="responsive">
 <div class="gallery">
-  <a target="_blank" href="img.jpg">
-    <img src="/images/mechanical-keyboard-with-rbg.jpg" alt="keyboard 2" width="600" height="400">
+  <a target="_blank" href="images/nintendo.jpg">
+    <img src="images/nintendo.jpg" alt="keyboard 2" width="600" height="400">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="desc">Nintendo Inspired Build</div>
 </div>
           </div>
 
           
-<div class="scroll-container">
+<div class="responsive">
 <div class="gallery">
-  <a target="_blank" href="img_">
-    <img src="img_jpg" alt="" width="600" height="400">
+  <a target="_blank" href="images/75V2.jpg">
+    <img src="images/75V2.jpg" alt="" width="600" height="400">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="desc">Custom 75V2 white keyboard</div>
 </div>
 </div>
-      <div class="scroll-container">
+      <div class="responsive">
           
 <div class="gallery">
-  <a target="_blank" href="img_">
-    <img src=".jpg" alt="" width="600" height="400">
+  <a target="_blank" href="images/i15_tofu65.jpg">
+    <img src="images/i15_tofu65.jpg" alt="" width="600" height="400">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="desc">Tofu 65 Grey</div>
 </div>
           </div>
+        <div class="responsive">
+          
+<div class="gallery">
+  <a target="_blank" href="images/mito.jpg">
+    <img src="images/mito.jpg" alt="" width="600" height="400">
+  </a>
+  <div class="desc">MIto 2 BLue</div>
+</div>
+          </div>
+      
      
 </div>
     </div>

@@ -22,6 +22,7 @@ div.gallery img {
 div.desc {
   padding: 15px;
   text-align: center;
+    color: white;
 }
 
 * {
@@ -59,39 +60,39 @@ div.desc {
 <body>
    <?php include 'header.php';?>
     <div class="row"> 
-  <div class="side">...</div>
+  
   <div class="main">  
        <div class="responsive">
       <div class="gallery">
-  <a target="_blank" href="images/build-your-own-keyboard-4.jpg">
-    <img src="images/build-your-own-keyboard-4.jpg" alt="custom keyboards" width="800" height="800">
+  <a target="_blank" href="images/i12_q2-knob-full-navy_800x.jpg">
+    <img src="images/i12_q2-knob-full-navy_800x.jpg" alt="custom keyboards" width="600" height="400">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="desc">Navyblue Knob Pre-built Keyboard</div>
 </div>
            </div>
       <div class="responsive">
 
 <div class="gallery">
-  <a target="_blank" href="images/DSC_4386.jpg">
-    <img src="images/DSC_4386.jpg" alt="" width="3000" height="1780">
+  <a target="_blank" href="images/blueamurai.jpg">
+    <img src="images/blueamurai.jpg" alt="" width="600" height="400">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="desc">Blue samurai Pre-built Keyboard</div>
 </div>
             </div>
       <div class="responsive">
 <div class="gallery">
-  <a target="_blank" href="img_">
-    <img src="images/e-heshna.jpg" alt="" width="600" height="400">
+  <a target="_blank" href="images/Theory.jpg">
+    <img src="images/Theory.jpg" alt="" width="600" height="400">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="desc">Theory 11 Pre-built Keyboard</div>
 </div>
       </div>
       <div class="responsive">
 <div class="gallery">
-  <a target="_blank" href="img_">
-    <img src="images/Q2-knob-full-navy_800x.jpg" alt="" width="600" height="400">
+  <a target="_blank" href="images/MilkywayBlue.jpg">
+    <img src="images/MilkywayBlue.jpg" alt="" width="600" height="400">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="desc">Milkyway Pre-built Keyboard</div>
 </div>
         </div>
 </div>
