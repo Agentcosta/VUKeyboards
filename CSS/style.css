@@ -1,4 +1,4 @@
-<style>
+
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   background-color: #1d1d1d; /* Dark background color */
@@ -61,6 +61,12 @@ body {
   padding: 20px;
   border-radius: 8px;
 }
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #212121; /* Dark footer background */
+  color: #d3d3d3; /* Light grey footer text color */
+}
 
 @media screen and (max-width: 700px) {
   .row {
@@ -75,10 +81,5 @@ body {
   }
 }
 
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #212121; /* Dark footer background */
-  color: #d3d3d3; /* Light grey footer text color */
-}
-</style>
+
+
