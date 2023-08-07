@@ -80,8 +80,7 @@ input[type=submit]:hover {
   <input type="text" id="lname" name="lname" value="" placeholder="enter last name"><br><br>
   <label for="email">email:</label><br>
   <input type="text" id="email" name="email" value="" placeholder="enter email"><br><br>
-    <label for="comment">comment:</label><br>
- <textarea name="comment" rows="5" cols="40" value="<?php print $comment;?>"></textarea><br><br>
+    <label for="comment">what would you like to tell us" cols="40" value="<?php print $comment;?>"></textarea><br><br>
  <input type="submit" value="Submit">
 </form>
       </div>
