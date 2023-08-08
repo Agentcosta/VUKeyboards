@@ -68,10 +68,10 @@ input[type=submit]:hover {
   <div class="side"><h2>About us </h2>
      <div class="container">
          <p>
-      This is all about us /img</p>
+      This is all about us</p>
       </div>
         </div>
-  <div class="main">   <h2>Please fill out this form to send us your details</h2>
+  <div class="main">   <h2>Should you have any inquiry, please feel to shoot us an email at support@vukeyboards.com, we'll get back to you as soon as we can.</h2>
 <div class="container">
 <form action="action_page.php" method="POST"> 
   <label for="fname">First name:</label><br>
