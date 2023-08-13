@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Page Title</title>
@@ -73,25 +74,44 @@ input[type=submit]:hover {
         </div>
   <div class="main">   <h2>Should you have any inquiry, please feel to shoot us an email at support@vukeyboards.com, we'll get back to you as soon as we can.</h2>
 <div class="container">
-<form action="action_page.php" method="POST"> 
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" value="" placeholder="enter first name"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" value="" placeholder="enter last name"><br><br>
-  <label for="email">email:</label><br>
-  <input type="text" id="email" name="email" value="" placeholder="enter email"><br><br>
-    <label for="comment">what would you like to tell us" cols="40" value="<?php print $comment;?>"></textarea><br><br>
- <input type="submit" value="Submit">
-</form>
+<?php
+// Include the setup.php file to establish database connection
+require_once 'setup.php';
+// Check if the form is submitted
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Check if all required form fields are filled
+    if(isset($_POST['id'], $_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['comment'])) {
+        $id = $_POST['id'];
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $email = $_POST['email'];
+        $comment = $_POST['comment'];
+                // Update the record in the "contacts" table
+        $query = "UPDATE contacts SET fname = ?, lname = ?, email = ?, comment = ? WHERE id = ?";
+        $stmt = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($stmt, "ssssi", $fname, $lname, $email, $comment, $id);
+                if(mysqli_stmt_execute($stmt)) {
+            echo 'Record updated successfully.';
+        } else {
+            echo 'Error updating record: ' . mysqli_stmt_error($stmt);
+        }
+        // Close the statement
+        mysqli_stmt_close($stmt);
+    } else {
+        echo 'All form fields are required.';
+    }
+} else {
+    echo 'Invalid request.';
+}
+
+// Close the database connection
+mysqli_close($conn);
+?>
+
+<?php
+$title="about the team">
+    >
       </div>
-      <div class="wrapper">
-           <?php
-$title="about the team";
-    $text1 ="................";
-    $image = "img/" ;?>   
-        
-        </div>
-   
         </div>
 </div>
         
