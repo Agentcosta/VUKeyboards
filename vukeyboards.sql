@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2023 at 01:26 AM
+-- Generation Time: Aug 14, 2023 at 07:01 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -64,8 +64,7 @@ INSERT INTO `gallery` (`id`, `imgname`, `title`, `category`) VALUES
 (1, 'i12_q2-knob-full-navy_800x.jpg', 'Custom Keyboards', 'Pre built '),
 (2, 'blueamurai.jpg', 'Blue Samurai Keyboard', 'Pre built '),
 (3, 'Theory.jpg', 'The Theory Keyboard', 'Pre Built'),
-(4, 'MilkywayBlue.jpg', 'The Milkey Way', 'Pre built '),
-(5, '', '', '');
+(4, 'MilkywayBlue.jpg', 'The Milkey Way', 'Pre built ');
 
 -- --------------------------------------------------------
 
