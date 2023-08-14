@@ -60,54 +60,38 @@ div.desc {
 
 <div class="row">
 
-  <div class="main"> 
+  <div class="main">
+      <?php  // Include the setup.php file to establish database connection
+    require_once 'setup.php';
+// Fetch records from the "contacts" table
+    $sql = "SELECT * FROM gallery";
+     $stmt = mysqli_prepare($conn, $sql);
+ mysqli_stmt_execute($stmt);
+ $result = mysqli_stmt_get_result($stmt);
+
+ if (mysqli_num_rows($result) > 0) {
+         
+        while ($row = mysqli_fetch_assoc($result)) { 
+    $imgname=$row['imgname'];
+              $title=$row['title']; 
+            $id=$row['id'];
+      ?>
       <div class="responsive">
       <div class="gallery">
-  <a target="_blank" href="images/barboneblue.jpg">
-    <img src="images/barboneblue.jpg" alt="Keyboard 1" width="600" height="400">
+  <a target="_blank" href="keyboard.php?id=<?php echo $id;?>">
+    <img src="images/<?php echo $imgname;?>" alt="Keyboard 1" width="600" height="400">
   </a>
-  <div class="desc">Barbone Blue</div>
+  <div class="desc"><?php echo $title;?></div>
 </div>
       </div>
+      <?php 
+        } }
+      ?> 
+    
       
       
      
-<div class="responsive">
-<div class="gallery">
-  <a target="_blank" href="images/nintendo.jpg">
-    <img src="images/nintendo.jpg" alt="keyboard 2" width="600" height="400">
-  </a>
-  <div class="desc">Nintendo Inspired Build</div>
-</div>
-          </div>
 
-          
-<div class="responsive">
-<div class="gallery">
-  <a target="_blank" href="images/75V2.jpg">
-    <img src="images/75V2.jpg" alt="" width="600" height="400">
-  </a>
-  <div class="desc">Custom 75V2 white keyboard</div>
-</div>
-</div>
-      <div class="responsive">
-          
-<div class="gallery">
-  <a target="_blank" href="images/i15_tofu65.jpg">
-    <img src="images/i15_tofu65.jpg" alt="" width="600" height="400">
-  </a>
-  <div class="desc">Tofu 65 Grey</div>
-</div>
-          </div>
-        <div class="responsive">
-          
-<div class="gallery">
-  <a target="_blank" href="images/mito.jpg">
-    <img src="images/mito.jpg" alt="" width="600" height="400">
-  </a>
-  <div class="desc">MIto 2 BLue</div>
-</div>
-          </div>
       
      
 </div>
