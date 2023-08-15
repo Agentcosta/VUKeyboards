@@ -25,10 +25,6 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 	$stmt->store_result();
 
 
-	$stmt->close();
-}
-
-$stmt->store_result();
 if ($stmt->num_rows > 0) {
 	$stmt->bind_result($id, $password);
 	$stmt->fetch();
@@ -56,4 +52,6 @@ if ($_POST['password'] === $password) {}
 
 echo 'Welcome ' . $_SESSION['name'] . '!';
 header('Location: home.php');
+    $stmt->close();
+}
 ?>
