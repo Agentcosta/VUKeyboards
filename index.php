@@ -79,7 +79,7 @@ div.desc {
   <div class="desc">Blue samurai Pre-built Keyboard</div>
 </div>
             </div>
-      <div class="responsive">
+      <div class="responsive">   
 <div class="gallery">
   <a target="_blank" href="images/Theory.jpg">
     <img src="images/Theory.jpg" alt="" width="600" height="400">
@@ -99,7 +99,6 @@ div.desc {
   
 </div>
               </div>
-    
    
   
      

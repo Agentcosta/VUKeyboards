@@ -90,6 +90,15 @@ div.desc {
   <div class="desc">Prebuilt keyboards</div>
 </div>
 </div>
+      <div class="responsive">
+<div class="gallery">
+  <a target="_blank" href="images/Boardwhite.jpg">
+    <img src="images/Boardwhite.jpg" alt="" width="600" height="400">
+  </a>
+  <div class="desc">Frames</div>
+</div>
+</div>
+
 
       
      
