@@ -64,8 +64,14 @@ div.desc {
       <?php  // Include the setup.php file to establish database connection
     require_once 'setup.php';
 // Fetch records from the "contacts" table
-    $sql = "SELECT * FROM gallery";
-     $stmt = mysqli_prepare($conn, $sql);
+      if(isset($_GET['category'])) {
+    $category = $_GET['category'];
+    // Fetch the record from the "contacts" table with the given ID
+    $query = "SELECT * FROM gallery WHERE category = '$category' ";
+    $stmt = mysqli_prepare($conn, $query);
+    //mysqli_stmt_bind_param($stmt, "i", $category);
+    print $query;
+     
  mysqli_stmt_execute($stmt);
  $result = mysqli_stmt_get_result($stmt);
 
@@ -85,7 +91,7 @@ div.desc {
 </div>
       </div>
       <?php 
-        } }
+        } }}
       ?> 
     
       

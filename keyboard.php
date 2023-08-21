@@ -103,14 +103,16 @@ if(isset($_GET['id'])) {
     if(mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
           $imgname=$row['imgname'];
-              $title=$row['title']; }}
+          $title=$row['title'];
+          $price=$row['price'];
+    }}
         // Display the edit form with the existing record's data
         ?>
   <div class="main">
 <div class="card">
   <img src="images/<?php echo $imgname;?>" alt="Denim Jeans" style="width:100%">
   <h1><?php echo $title;?></h1>
-  <p class="price">$19.99</p>
+  <p class="price">$<?php echo $price;?></p>
   <p>Some text about the jeans..</p>
   <p><button>Add to Cart</button></p>
 </div>

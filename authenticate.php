@@ -51,7 +51,7 @@ if (password_verify($_POST['password'], $password)) {}
 if ($_POST['password'] === $password) {}
 
 echo 'Welcome ' . $_SESSION['name'] . '!';
-header('Location: home.php');
+header('Location: admin.php');
     $stmt->close();
 }
 ?>

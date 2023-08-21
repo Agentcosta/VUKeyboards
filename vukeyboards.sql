@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2023 at 07:01 AM
+-- Generation Time: Aug 21, 2023 at 02:01 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -53,18 +53,32 @@ CREATE TABLE `gallery` (
   `id` int(11) NOT NULL,
   `imgname` varchar(50) NOT NULL,
   `title` varchar(100) NOT NULL,
-  `category` varchar(50) NOT NULL
+  `category` varchar(50) NOT NULL,
+  `price` decimal(10,0) NOT NULL,
+  `describtion` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gallery`
 --
 
-INSERT INTO `gallery` (`id`, `imgname`, `title`, `category`) VALUES
-(1, 'i12_q2-knob-full-navy_800x.jpg', 'Custom Keyboards', 'Pre built '),
-(2, 'blueamurai.jpg', 'Blue Samurai Keyboard', 'Pre built '),
-(3, 'Theory.jpg', 'The Theory Keyboard', 'Pre Built'),
-(4, 'MilkywayBlue.jpg', 'The Milkey Way', 'Pre built ');
+INSERT INTO `gallery` (`id`, `imgname`, `title`, `category`, `price`, `describtion`) VALUES
+(1, 'i12_q2-knob-full-navy_800x.jpg', 'Basic Blue Custom Keyboard', 'Pre-built ', 100, ''),
+(2, 'blueamurai.jpg', 'Blue Samurai Keyboard', 'Pre-built', 0, ''),
+(3, 'Theory.jpg', 'The Theory Keyboard', 'Pre-built', 0, ''),
+(4, 'MilkywayBlue.jpg', 'The Milkey Way', 'Pre-built', 0, ''),
+(6, '75V2.jpg', '75V2 Custom Keyboard', 'Pre-built', 0, ''),
+(7, 'bananasplitswitch.jpg', 'Banana Split Switches(factory lubed)', 'Switches', 0, ''),
+(8, 'barboneblue.jpg', 'Barbone Blue Keyboard', 'Pre-built', 0, ''),
+(9, 'Boardwhite.jpg', 'White keyboard frame+board', 'Frames', 0, ''),
+(10, 'cherrymxred.jpg', 'Cherry MX switches (red)', 'Switches', 0, ''),
+(11, 'cuskap.jpg', 'Jell Keycaps PBT (white)', 'Keycaps', 0, ''),
+(12, 'DCXgreen.jpg', 'DCX Custom Keyboard (green)', 'Pre-built', 0, ''),
+(13, 'duck.jpg', 'DuckY Custom Keyboard', 'Pre-built', 0, ''),
+(14, 'everglideaqking.jpg', 'Everglide Aquaking Switches', 'Switches', 0, ''),
+(15, 'GK980.jpg', 'GK980 Custom Keyboard', 'Pre Pre-built', 0, ''),
+(16, 'gmk8008.jpg', 'GMK 8008 Keyboard', 'Pre Pre-built', 0, ''),
+(17, 'gmkicebergcaps.jpg', 'GMK Icebergs Keycaps', 'Keycaps', 0, '');
 
 -- --------------------------------------------------------
 
@@ -109,7 +123,7 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
