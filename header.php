@@ -15,7 +15,6 @@
       <a href="#">Frames</a>
     </div>
   </div> 
-        <a href="category.php">Category</a>
         <a href="contact.php">Contact Us</a>
         <a href="login.php" class="right">Login</a>
         <a href="search.php" class="right">Search</a>

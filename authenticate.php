@@ -6,6 +6,7 @@ $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
 $DATABASE_NAME = 'phplogin';
 // Try and connect using the info above.
+
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( mysqli_connect_errno() ) {
 	// If there is an error with the connection, stop the script and display the error.
@@ -53,5 +54,26 @@ if ($_POST['password'] === $password) {}
 echo 'Welcome ' . $_SESSION['name'] . '!';
 header('Location: admin.php');
     $stmt->close();
+}
+//print_r($_SESSION);
+if(isset($_SESSION)){
+    $loggedin=$_SESSION["loggedin"];
+    $name=$_SESSION["name"];
+    $id=$_SESSION["id"];
+}
+else{header('Location: phplogin/index.html');}
+?>
+
+Using that logged in status to show login or logout
+
+
+  <a href="cart.php" class="right">Cart</a>
+    <?php
+    if(isset( $loggedin)){
+?>
+       <a href="logout.php" class="right">Logout</a>  
+<?php }
+else{ ?>
+    <a href="phplogin" class="right">Login</a>
 }
 ?>
