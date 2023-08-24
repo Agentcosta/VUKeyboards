@@ -10,6 +10,7 @@ body {
   text-align: center;
   background: #212121; /* Dark header background */
   color: #ffffff; /* White header text color */
+   font: monospace;
 }
 
 .header h1 {

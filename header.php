@@ -1,5 +1,5 @@
   <div class="header">
-  <h1>Vu Keyboards</h1>
+  <h1 align="left">Vu Keyboards </h1>
 </div>
     <div class="navbar">
         <a href="index.php">Home</a>
