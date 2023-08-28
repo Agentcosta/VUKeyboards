@@ -180,7 +180,7 @@ body.loggedin {
   border: none;
   outline: none;
   color: white;
-  padding: 14px 16px;
+  padding: 2px 2px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
@@ -202,7 +202,7 @@ body.loggedin {
 .dropdown-content a {
   float: none;
   color: black;
-  padding: 12px 16px;
+  padding: 2px 3px;
   text-decoration: none;
   display: block;
   text-align: left;

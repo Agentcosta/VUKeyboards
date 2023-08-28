@@ -38,7 +38,7 @@ if ($stmt->num_rows > 0) {
 		$_SESSION['loggedin'] = TRUE;
 		$_SESSION['name'] = $_POST['username'];
 		$_SESSION['id'] = $id;
-		echo 'Welcome ' . $_SESSION['name'] . '!';
+		header('Location: shop.php');
 	} else {
 		// Incorrect password
 		echo 'Incorrect username and/or password!';
@@ -48,32 +48,13 @@ if ($stmt->num_rows > 0) {
 	echo 'Incorrect username and/or password!';
 }
 
-if (password_verify($_POST['password'], $password)) {}
-if ($_POST['password'] === $password) {}
+//if (password_verify($_POST['password'], $password)) 
+//if ($_POST['password'] === $password) {}
 
-echo 'Welcome ' . $_SESSION['name'] . '!';
-header('Location: admin.php');
+//echo 'Welcome ' . $_SESSION['name'] . '!';
+//header('Location: admin.php');
     $stmt->close();
 }
 //print_r($_SESSION);
-if(isset($_SESSION)){
-    $loggedin=$_SESSION["loggedin"];
-    $name=$_SESSION["name"];
-    $id=$_SESSION["id"];
-}
-else{header('Location: phplogin/index.html');}
-?>
 
-Using that logged in status to show login or logout
-
-
-  <a href="cart.php" class="right">Cart</a>
-    <?php
-    if(isset( $loggedin)){
-?>
-       <a href="logout.php" class="right">Logout</a>  
-<?php }
-else{ ?>
-    <a href="phplogin" class="right">Login</a>
-}
 ?>
