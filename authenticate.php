@@ -4,7 +4,7 @@ session_start();
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
-$DATABASE_NAME = 'phplogin';
+$DATABASE_NAME = 'vukeyboards';
 // Try and connect using the info above.
 
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
@@ -39,7 +39,7 @@ if ($stmt->num_rows > 0) {
 		$_SESSION['name'] = $_POST['username'];
 		$_SESSION['id'] = $id;
 		header('Location: shop.php');
-	} else {
+	} else {////////
 		// Incorrect password
 		echo 'Incorrect username and/or password!';
 	}
