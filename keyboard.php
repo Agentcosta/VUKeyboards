@@ -113,7 +113,10 @@ if(isset($_GET['id'])) {
   <img src="images/<?php echo $imgname;?>" alt="" style="width:100%">
   <h1><?php echo $title;?></h1>
   <p class="price">$<?php echo $price;?></p>
-  <p> $<?php echo $describtion;?></p>
+  <p>$<?php echo $describtion;?></p>
+    
+    
+
   <p><button>Purchase</button></p>
 </div>
 </div>
