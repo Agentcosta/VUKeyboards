@@ -144,29 +144,35 @@
   <div class="caption-container">
     <p id="caption"></p>
   </div>
+  <?php  // Include the setup.php file to establish database connection
+    require_once 'setup.php';
+           
+    // Fetch the record from the "gallery" table with a specials
+    $query = "SELECT * FROM gallery WHERE special = 'S' ";
+    $stmt = mysqli_prepare($conn, $query);
+    //print $query;
+     
+ mysqli_stmt_execute($stmt);
+ $result = mysqli_stmt_get_result($stmt);
 
-  <!-- Thumbnail images -->
-  <div class="row">
+ if (mysqli_num_rows($result) > 0) {
+         
+        while ($row = mysqli_fetch_assoc($result)) { 
+    $imgname=$row['imgname'];
+              $title=$row['title']; 
+            $id=$row['id'];
+      ?>
+       <div class="row">
     <div class="column">
-        
-      <img class="demo cursor" src="images/<?php echo $imgname;?>" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/<?php echo $imgname;?>" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/<?php echo $imgname;?>" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/<?php echo $imgname;?>" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/<?php echo $imgname;?>"style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/<?php echo $imgname;?>"style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-    </div>
-  </div>
+  <!--<a target="_blank" href="keyboard.php?id=<?php echo $id;?>"-->
+    <img class="demo cursor" src="images/<?php echo $imgname;?>" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+  <!--</a>-->
+</div>
+      </div>
+      <?php 
+        } }
+      ?> 
+  
 </div>
         </div>
  

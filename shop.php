@@ -75,11 +75,11 @@ else{header('Location: login.php');}
   <div class="main">
       <?php  // Include the setup.php file to establish database connection
     require_once 'setup.php';
-// Fetch records from the "contacts" table
+// Fetch records from the "gallery" table
       //if(isset($_GET['category'])) 
            if(isset($_GET['category'])) {
                 $category = $_GET['category'];
-    // Fetch the record from the "contacts" table with the given ID
+    // Fetch the record from the "gallery" table with the given ID
     $query = "SELECT * FROM gallery WHERE category = '$category' ";}
        else {$query = "SELECT * FROM gallery  ";}              
 
