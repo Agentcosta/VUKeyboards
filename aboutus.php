@@ -69,7 +69,7 @@ input[type=submit]:hover {
   <div class="side"><h2>About us </h2>
      <div class="container">
          <p>
-      This is all about us</p>
+      Welcome to Vu Keyboards, where innovation meets precision in the world of keyboards. We are a leading keyboard manufacturer dedicated to creating high-quality, cutting-edge input devices that redefine the way you interact with technology. With a passion for design and a commitment to performance, Vu Keyboards is at the forefront of the keyboard industry. Our products are engineered to deliver a seamless and comfortable typing experience, making them ideal for both professionals and enthusiasts. Discover the perfect balance of form and function with Vu keyboards, setting a new standard in the world of input devices.</p>
       </div>
         </div>
   <div class="main">   <h2>Should you have any inquiry, please feel to shoot us an email at support@vukeyboards.com, we'll get back to you as soon as we can.</h2>

@@ -10,6 +10,7 @@
 input[type=text], select, textarea {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */ 
+    color: black
   border: 1px solid #ccc; /* Gray border */
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -56,6 +57,7 @@ input[type=submit]:hover {
         font-family: Arial, Helvetica, sans-serif;
     }
     label {
+        color: black
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
     
@@ -68,7 +70,7 @@ input[type=submit]:hover {
   <div class="side"><h2>About us </h2>
      <div class="container">
          <p>
-      This is all about us</p>
+      Welcome to Vu Keyboards, where innovation meets precision in the world of keyboards. We are a leading keyboard manufacturer dedicated to creating high-quality, cutting-edge input devices that redefine the way you interact with technology.</p><p> With a passion for design and a commitment to performance, Vu Keyboards is at the forefront of the keyboard industry. Our products are engineered to deliver a seamless and comfortable typing experience, making them ideal for both professionals and enthusiasts. </p><p>Discover the perfect balance of form and function with Vu keyboards, setting a new standard in the world of input devices.</p>
       </div>
         </div>
   <div class="main">   <h2>Should you have any inquiry, please feel to shoot us an email at support@vukeyboards.com, we'll get back to you as soon as we can.</h2>
@@ -80,7 +82,8 @@ input[type=submit]:hover {
   <input type="text" id="lname" name="lname" value="" placeholder="enter last name"><br><br>
   <label for="email">email:</label><br>
   <input type="text" id="email" name="email" value="" placeholder="enter email"><br><br>
-    <label for="comment">what would you like to tell us" cols="40" value="<?php print $comment;?>"></textarea><br><br>
+    <label for="comment">what would you like to tell us</label><br>
+    <textarea></textarea><br><br>
  <input type="submit" value="Submit">
 </form>
       </div>

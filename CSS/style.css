@@ -83,6 +83,7 @@ body {
 * {
   	box-sizing: border-box;
   	font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    color: black;
   	font-size: 16px;
 }
 body {
