@@ -38,7 +38,12 @@ if ($stmt->num_rows > 0) {
 		$_SESSION['loggedin'] = TRUE;
 		$_SESSION['name'] = $_POST['username'];
 		$_SESSION['id'] = $id;
-		header('Location: shop.php');
+		if ($_SESSION['name'] == 'admin'){
+  header('Location: ../admin/admin.php');
+            }
+        else{
+            header('Location: ../index.php');
+        }
 	} else {////////
 		// Incorrect password
 		echo 'Incorrect username and/or password!';
