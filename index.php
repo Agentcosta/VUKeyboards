@@ -94,6 +94,37 @@
   opacity: 1;
 }
 </style>
+    <script>
+   
+  let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+} 
+         </script>
 </head>
 <body>
    <?php include 'header.php';?>
@@ -144,34 +175,7 @@
   <div class="caption-container">
     <p id="caption"></p>
   </div>
-  <?php  // Include the setup.php file to establish database connection
-    require_once 'setup.php';
-           
-    // Fetch the record from the "gallery" table with a specials
-    $query = "SELECT * FROM gallery WHERE special = 'S' ";
-    $stmt = mysqli_prepare($conn, $query);
-    //print $query;
-     
- mysqli_stmt_execute($stmt);
- $result = mysqli_stmt_get_result($stmt);
 
- if (mysqli_num_rows($result) > 0) {
-         
-        while ($row = mysqli_fetch_assoc($result)) { 
-    $imgname=$row['imgname'];
-              $title=$row['title']; 
-            $id=$row['id'];
-      ?>
-       <div class="row">
-    <div class="column">
-  <!--<a target="_blank" href="keyboard.php?id=<?php echo $id;?>"-->
-    <img class="demo cursor" src="images/<?php echo $imgname;?>" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-  <!--</a>-->
-</div>
-      </div>
-      <?php 
-        } }
-      ?> 
   
 </div>
         </div>
