@@ -26,6 +26,6 @@ else{ ?>
     <?php }
     ?>
 
-        <a href="search.php" class="right">Search</a>
+        <a href="registration.php" class="right">Register</a>
 
     </div>

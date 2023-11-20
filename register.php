@@ -21,7 +21,7 @@ if ($stmt = $conn->prepare('SELECT id, password FROM accounts WHERE username = ?
 		echo 'Username exists, please choose another!';
 	} else {
 		// Username doesn't exists, insert new account
-if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email, activation_code) VALUES (?, ?, ?, ?)')) {
+if ($stmt = $conn->prepare('INSERT INTO accounts (username, password, email, activation_code) VALUES (?, ?, ?, ?)')) {
 	// We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
 	$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 	$uniqid = uniqid();
@@ -46,7 +46,7 @@ echo 'Please check your email to activate your account!';
 	echo 'Could not prepare statement!';
 }
 $conn->close();
-if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
+if ($stmt = $conn->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
     if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 	exit('Email is not valid!');
 }
@@ -55,6 +55,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 }
     if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 5) {
 	exit('Password must be between 5 and 20 characters long!');
+}
 }
 ?>
 
