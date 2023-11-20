@@ -67,6 +67,18 @@ body {
   background: #212121; /* Dark footer background */
   color: #d3d3d3; /* Light grey footer text color */
 }
+.footernavigation{
+    background-color: rgb(171, 89, 171);
+    padding-top:0;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 46px;
+    margin-left: -20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    
+}
 
 @media screen and (max-width: 700px) {
   .row {
