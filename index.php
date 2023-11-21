@@ -4,7 +4,7 @@
 <title>Vu Keyboards-home page</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="css/style.css" rel="stylesheet" type="text/css">]
+<link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="slideshow.java" rel="script" type="java">
 
 <style>
@@ -94,6 +94,20 @@
 .demo:hover {
   opacity: 1;
 }
+    /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
 </style>
     <script>
    
@@ -138,23 +152,33 @@ function showSlides(n) {
 <div class="slideshow-container">
 
   <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <img src="img1.jpg" style="width:100%">
-    <div class="text">Caption Text</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="img2.jpg" style="width:100%">
-    <div class="text">Caption Two</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="img3.jpg" style="width:100%">
-    <div class="text">Caption Three</div>
-  </div>
+ <?php  // Include the setup.php file to establish database connection
+    require_once 'setup.php';
+           
+    // Fetch the record from the "gallery" table with a specials
+    $query = "SELECT * FROM gallery WHERE special = 'S' ";
+    $stmt = mysqli_prepare($conn, $query);
+    //print $query;
+     
+ mysqli_stmt_execute($stmt);
+ $result = mysqli_stmt_get_result($stmt);
+ if (mysqli_num_rows($result) > 0) {
+         
+        while ($row = mysqli_fetch_assoc($result)) { 
+    $imgname=$row['imgname'];
+              $title=$row['title']; 
+            $id=$row['id'];
+      ?>
+       <div class="row">
+    <div class="column">
+  <!--<a target="_blank" href="keyboard.php?id=<?php echo $id;?>"-->
+    <img class="demo cursor" src="images/<?php echo $imgname;?>" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+  <!--</a>-->
+</div>
+      </div>
+      <?php 
+        } }
+      ?> 
 
   <!-- Next and previous buttons -->
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
