@@ -4,7 +4,8 @@
 <title>Vu Keyboards-home page</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">]
+    <link href="slideshow.java" rel="script" type="java">
 
 <style>
 * {
@@ -133,43 +134,40 @@ function showSlides(n) {
   <div class="main">  
        <div class="responsive">
       <div class="gallery">
-<!-- Container for the image gallery -->
-<div class="container">
+<!-- Slideshow container -->
+<div class="slideshow-container">
 
-  <!-- Full-width images with number text -->
-  <div class="mySlides">
-    <div class="numbertext">1 / 6</div>
-      <img src="images/blueamurai.jpg" style="width:100%">
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="img1.jpg" style="width:100%">
+    <div class="text">Caption Text</div>
   </div>
 
-  <div class="mySlides">
-    <div class="numbertext">2 / 6</div>
-      <img src="images/MilkywayBlue.jpg" style="width:100%">
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="img2.jpg" style="width:100%">
+    <div class="text">Caption Two</div>
   </div>
 
-  <div class="mySlides">
-    <div class="numbertext">3 / 6</div>
-      <img src="images/mito.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">4 / 6</div>
-      <img src="images/barboneblue.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">5 / 6</div>
-      <img src="images/GK980.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">6 / 6</div>
-      <img src="images/gmk8008.jpg" style="width:100%">
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="img3.jpg" style="width:100%">
+    <div class="text">Caption Three</div>
   </div>
 
   <!-- Next and previous buttons -->
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
 
   <!-- Image text -->
   <div class="caption-container">
