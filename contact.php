@@ -83,7 +83,7 @@ input[type=submit]:hover {
   <label for="email">email:</label><br>
   <input type="text" id="email" name="email" value="" placeholder="enter email"><br><br>
     <label for="comment">what would you like to tell us</label><br>
-    <textarea></textarea><br><br>
+    <textarea name="comment"></textarea><br><br>
  <input type="submit" value="Submit">
 </form>
       </div>

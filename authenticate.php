@@ -39,10 +39,10 @@ if ($stmt->num_rows > 0) {
 		$_SESSION['name'] = $_POST['username'];
 		$_SESSION['id'] = $id;
 		if ($_SESSION['name'] == 'admin'){
-  header('Location: ../admin/admin.php');
+  header('Location: admin.php');
             }
         else{
-            header('Location: ../index.php');
+            header('Location: index.php');
         }
 	} else {////////
 		// Incorrect password

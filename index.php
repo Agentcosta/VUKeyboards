@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="slideshow.java" rel="script" type="java">
+    
 
 <style>
 * {
@@ -94,20 +95,7 @@
 .demo:hover {
   opacity: 1;
 }
-    /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {
-    flex-direction: column;
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
-}
+    
 </style>
     <script>
    
@@ -142,7 +130,16 @@ function showSlides(n) {
          </script>
 </head>
 <body>
-   <?php include 'header.php';?>
+    
+   <?php
+    // We need to use sessions, so you should always start sessions using the below code.
+session_start();
+// If the user is not logged in redirect to the login page...
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: index.html');
+	exit;
+}
+    include 'header.php';?>
     <div class="row"> 
   
   <div class="main">  

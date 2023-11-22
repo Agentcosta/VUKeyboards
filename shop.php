@@ -65,7 +65,7 @@ if(isset($_SESSION["loggedin"])){
 }
 else{header('Location: login.php');}
 ?>
-
+<div class="wrapper">
 <?php include 'header.php';?>
     
 
@@ -120,6 +120,7 @@ else{header('Location: login.php');}
     
   
     <?php include 'footer.php';?>
+    </div>
 </body>
 </html>
 

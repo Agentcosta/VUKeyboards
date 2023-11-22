@@ -17,12 +17,15 @@
         <a href="contact.php">Contact Us</a>
         <a href="cart.php" class="right">Cart</a>
     <?php
-    if(isset( $loggedin)){
+
+    if(isset($_SESSION['loggedin'])){
 ?>
+    
        <a href="logout.php" class="right">Logout</a>  
-<?php }
-else{ ?>
-    <a href="login.php" class="right">Login</a>
+<?php 
+    }else{ ?>
+          <a href="login.php" class="right">Login</a>
+    
     <?php }
     ?>
 
