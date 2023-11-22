@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2023 at 03:02 AM
+-- Generation Time: Nov 22, 2023 at 03:42 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -31,15 +31,21 @@ CREATE TABLE `accounts` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `email` varchar(100) NOT NULL
+  `email` varchar(100) NOT NULL,
+  `activation_code` varchar(50) DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`id`, `username`, `password`, `email`) VALUES
-(1, 'test', '$2y$10$SfhYIDtn.iOuCW7zfoFLuuZHX6lja4lF4XA4JqNmpiH/.P3zB8JCa', 'test@test.com');
+INSERT INTO `accounts` (`id`, `username`, `password`, `email`, `activation_code`) VALUES
+(1, 'test', '$2y$10$SfhYIDtn.iOuCW7zfoFLuuZHX6lja4lF4XA4JqNmpiH/.P3zB8JCa', 'test@test.com', ''),
+(3, 'admin', '$2y$10$i596AOM3E.32VkdfBcDykuBR2vyxWb4fh70TqV3DRYoVw8a0f8OTi', 'admin@gmail.com', '655b7b3fa422c'),
+(4, 'user1', '$2y$10$Q3AoAxQZC0uLsuPhxoZO1eYXuiCwjo4WA7iRg35zo/iznFt2bTMU6', 'user1@gmail.com', '655d5ac19678f'),
+(5, 'user2', '$2y$10$7R1i3HeaRLKTMobZQF1Fdeo.vGgaCWyZ0gX9OLhD0xqCaobuT42ha', 'user2@mail.com', '655d5b8ccf7a4'),
+(6, 'user3', '$2y$10$JH4Vy1zISD57oZdy0ZvNyeKA0hstUrgQ.SHQXElr4QZ.UDviKiXBe', 'user3@gmail.com', '655d5ccebd79e'),
+(7, 'user4', '$2y$10$gpEORHw.JHxGCKx83E.IH.cWsimw4B43HsUQX9omNoolHu1gJzDWS', 'user4@mail.com', '655d5e05edc59');
 
 -- --------------------------------------------------------
 
@@ -62,7 +68,7 @@ CREATE TABLE `contacts` (
 INSERT INTO `contacts` (`id`, `fname`, `lname`, `email`, `comment`) VALUES
 (1, 'mark', 'Vu', 'mark@mail.com', 'hi good website'),
 (2, 'George', 'Mak', 'george@mail.com', 'hi nice'),
-(3, 'Markus', 'Chu', 'mkc.steam.cvb@gmail.com', '');
+(5, 'Markus', 'Chu', 'mkc.steam.cvb@gmail.com', 'hi there');
 
 -- --------------------------------------------------------
 
@@ -151,31 +157,6 @@ INSERT INTO `orders` (`order_id`, `gallery_id`, `accounts_id`, `Date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `results`
---
-
-CREATE TABLE `results` (
-  `results_id` int(11) NOT NULL,
-  `standard_id` int(11) NOT NULL,
-  `title` varchar(100) NOT NULL,
-  `core_id` int(11) NOT NULL,
-  `result` varchar(1) NOT NULL,
-  `Date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `results`
---
-
-INSERT INTO `results` (`results_id`, `standard_id`, `title`, `core_id`, `result`, `Date`) VALUES
-(1, 91900, 'Inquiry', 170001, '', '2022-02-09'),
-(2, 91909, 'Internal', 170001, '', '2022-02-09'),
-(3, 91903, 'external', 170001, '', '2022-02-09'),
-(4, 91909, 'External', 170001, '', NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `slide show`
 --
 
@@ -184,29 +165,6 @@ CREATE TABLE `slide show` (
   `imgname` varchar(100) NOT NULL,
   `title` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `standards`
---
-
-CREATE TABLE `standards` (
-  `standard_id` int(11) NOT NULL,
-  `title` text NOT NULL,
-  `version` int(11) NOT NULL,
-  `extra` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `standards`
---
-
-INSERT INTO `standards` (`standard_id`, `title`, `version`, `extra`) VALUES
-(91900, 'Inquiry', 1, 1),
-(91902, 'Create a Database', 1, 1),
-(91903, 'Create A website', 1, 1),
-(91909, 'Present a reflective analysis of developing a digital outcome', 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -248,23 +206,6 @@ ALTER TABLE `orders`
   ADD KEY `core_id` (`accounts_id`);
 
 --
--- Indexes for table `results`
---
-ALTER TABLE `results`
-  ADD PRIMARY KEY (`results_id`),
-  ADD KEY `results_id` (`results_id`),
-  ADD KEY `standardnum` (`standard_id`),
-  ADD KEY `standard_id` (`standard_id`),
-  ADD KEY `core_id` (`core_id`);
-
---
--- Indexes for table `standards`
---
-ALTER TABLE `standards`
-  ADD PRIMARY KEY (`standard_id`),
-  ADD KEY `standard_id` (`standard_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -272,13 +213,13 @@ ALTER TABLE `standards`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `core`
@@ -297,23 +238,6 @@ ALTER TABLE `gallery`
 --
 ALTER TABLE `orders`
   MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `results`
---
-ALTER TABLE `results`
-  MODIFY `results_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `results`
---
-ALTER TABLE `results`
-  ADD CONSTRAINT `results_ibfk_1` FOREIGN KEY (`standard_id`) REFERENCES `standards` (`standard_id`),
-  ADD CONSTRAINT `results_ibfk_2` FOREIGN KEY (`core_id`) REFERENCES `core` (`core_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
