@@ -95,6 +95,52 @@
 .demo:hover {
   opacity: 1;
 }
+    div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsivegallery {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsivegallery {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsivegallery {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
     
 </style>
     <script>
@@ -166,13 +212,11 @@ if (!isset($_SESSION['loggedin'])) {
               $title=$row['title']; 
             $id=$row['id'];
       ?>
-       <div class="row">
-    <div class="column">
-  <!--<a target="_blank" href="keyboard.php?id=<?php echo $id;?>"-->
-    <img class="demo cursor" src="images/<?php echo $imgname;?>" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-  <!--</a>-->
-</div>
-      </div>
+    <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="images/<?php echo $imgname;?>" style="width:100%">
+    <div class="text"><?php echo $title;?></div>
+  </div>
       <?php 
         } }
       ?> 
@@ -198,8 +242,34 @@ if (!isset($_SESSION['loggedin'])) {
   
 </div>
         </div>
- 
-  
+      <?php
+      // Fetch the record from the "gallery" table with a specials
+    $query = "SELECT * FROM gallery WHERE special = 'A' ";
+    $stmt = mysqli_prepare($conn, $query);
+    //print $query;
+     
+ mysqli_stmt_execute($stmt);
+ $result = mysqli_stmt_get_result($stmt);
+ if (mysqli_num_rows($result) > 0) {
+         
+        while ($row = mysqli_fetch_assoc($result)) { 
+    $imgname=$row['imgname'];
+              $title=$row['title']; 
+            $id=$row['id'];
+      ?>
+
+       <div class="responsivegallery">
+  <div class="gallery">
+    <a target="_blank" href="kb">
+      <img src="images/<?php echo $imgname;?>" alt="Mountains">
+    </a>
+    <div class="desc"><?php echo $title;?></div>
+  </div>
+</div>
+      <?php 
+        } }
+      ?> 
+
 </div>
               </div>
    
@@ -209,6 +279,34 @@ if (!isset($_SESSION['loggedin'])) {
 
     
 
-    </div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
     </body>
 </html>
