@@ -5,7 +5,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="slideshow.java" rel="script" type="java">
     
 
 <style>
@@ -176,6 +175,7 @@ function showSlides(n) {
          </script>
 </head>
 <body>
+    <div class="wrapper">
     
    <?php
     // We need to use sessions, so you should always start sessions using the below code.
@@ -276,6 +276,7 @@ if (!isset($_SESSION['loggedin'])) {
   
      
  <?php include 'footer.php';?>
+    </div>
 
     
 
