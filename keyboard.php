@@ -85,6 +85,7 @@ div.desc {
     </style>
 </head>
 <body>
+    <div class= "wrapper">
 
 <?php include 'header.php';?>
 
@@ -125,5 +126,6 @@ if(isset($_GET['id'])) {
     
   
     <?php include 'footer.php';?>
+        </div>
 </body>
 </html>

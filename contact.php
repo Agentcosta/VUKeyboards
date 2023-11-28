@@ -65,6 +65,7 @@ input[type=submit]:hover {
 </style>
 </head>
 <body>
+    <div class="wrapper">
 <?php include 'header.php';?>
     <div class="row">
   <div class="side"><h2>About us </h2>
@@ -103,5 +104,6 @@ $title="about the team";
 
 
 <?php include 'footer.php';?>
+        </div>
 </body>
 </html>

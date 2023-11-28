@@ -110,6 +110,7 @@ div.gallery img {
 div.desc {
   padding: 15px;
   text-align: center;
+    background-color: white;
 }
 
 * {
@@ -260,7 +261,7 @@ if (!isset($_SESSION['loggedin'])) {
 
        <div class="responsivegallery">
   <div class="gallery">
-    <a target="_blank" href="kb">
+    <a target="_blank" href="shop.php">
       <img src="images/<?php echo $imgname;?>" alt="Mountains">
     </a>
     <div class="desc"><?php echo $title;?></div>
