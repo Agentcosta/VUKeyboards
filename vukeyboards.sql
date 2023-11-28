@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2023 at 03:42 AM
+-- Generation Time: Nov 28, 2023 at 01:18 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -117,11 +117,11 @@ INSERT INTO `gallery` (`id`, `imgname`, `title`, `category`, `price`, `descripti
 (1, 'i12_q2-knob-full-navy_800x.jpg', 'Basic Blue Custom Keyboard', 'Pre-built ', 100, '', 'S'),
 (2, 'blueamurai.jpg', 'Blue Samurai Keyboard', 'Pre-built', 200, '', 'S'),
 (3, 'Theory.jpg', 'The Theory Keyboard', 'Pre-built', 450, '', 'S'),
-(4, 'MilkywayBlue.jpg', 'The Milkey Way', 'Pre-built', 80, '', 'S'),
-(6, '75V2.jpg', '75V2 Custom Keyboard', 'Pre-built', 500, '', 'N'),
-(7, 'bananasplitswitch.jpg', 'Banana Split Switches(factory lubed)', 'Switches', 200, '', 'N'),
-(8, 'barboneblue.jpg', 'Barbone Blue Keyboard', 'Pre-built', 150, '', 'S'),
-(9, 'Boardwhite.jpg', 'White keyboard frame+board', 'Frames', 240, '', 'S'),
+(4, 'MilkywayBlue.jpg', 'The Milkey Way', 'Pre-built', 80, '', 'A'),
+(6, '75V2.jpg', '75V2 Custom Keyboard', 'Pre-built', 500, '', 'S'),
+(7, 'bananasplitswitch.jpg', 'Banana Split Switches(factory lubed)', 'Switches', 200, '', 'A'),
+(8, 'barboneblue.jpg', 'Barbone Blue Keyboard', 'Pre-built', 150, '', 'A'),
+(9, 'Boardwhite.jpg', 'White keyboard frame+board', 'Frames', 240, '', 'N'),
 (10, 'cherrymxred.jpg', 'Cherry MX switches (red)', 'Switches', 205, '', 'N'),
 (11, 'cuskap.jpg', 'Jell Keycaps PBT (white)', 'Keycaps', 120, '', 'N'),
 (12, 'DCXgreen.jpg', 'DCX Custom Keyboard (green)', 'Pre-built', 230, '', 'N'),
